@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "f74a41c0-fccf-41b5-99cc-b9c1b598d547",
+		"name": "USERS",
+		"description": "This collection contains all user routes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST User Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"username\":\"Oirere\",\r\n    \"fullname\": \"Oierere\",\r\n    \"email\": \"Oirere@gmail.com\",\r\n    \"age\": \"43\",\r\n    \"password\": \"Oirere1234\",\r\n    \"role\": \"Lecturer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"add"
+					]
+				},
+				"description": "This endpoints is responsible for creating a new user"
+			},
+			"response": []
+		},
+		{
+			"name": "GET User Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user"
+					]
+				},
+				"description": "Responsible for getting all users in the database"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Users",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"username\": \"claries\",\r\n    \"fullname\": \"claries chebet koech\",\r\n    \"email\": \"clarieschebetkoech@gmail.com\",\r\n    \"age\": \"8\",\r\n    \"password\": \"clarieschebet(((*&^%$$\",\r\n    \"role\": \"student\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/3d530660-ceb0-11ec-9133-f5f58f60cc18",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"3d530660-ceb0-11ec-9133-f5f58f60cc18"
+					]
+				},
+				"description": "The endpoint is responsible for updating a user by providing the id of the user to be updated."
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Request",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "$2b$10$YmLKzNffKojogQKONKCssOvRDzzke67snPiwgdZkuB1UWL/cFbkBm",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/user/560775b0-ced8-11ec-bd63-2b83a0c8158e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"560775b0-ced8-11ec-bd63-2b83a0c8158e"
+					]
+				},
+				"description": "Its purpose is to delete a user by providing the id of the user of the user to be deleted along with the generated token"
+			},
+			"response": []
+		},
+		{
+			"name": "POST login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"caleb@gmail.com\",\r\n    \"password\": \"caleb1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				},
+				"description": "The endpoint is responsible for sign in purposes"
+			},
+			"response": []
+		},
+		{
+			"name": "HomePage Get",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "tokens",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNhbGViIiwiZnVsbG5hbWUiOiJDYWxlYiBraXBraXJ1aSBsYW5nYXQiLCJlbWFpbCI6ImNhbGViQGdtYWlsLmNvbSIsImFnZSI6MjksInJvbGUiOiJTdHVkZW50IiwiaWF0IjoxNjUyMDQwMDY4LCJleHAiOjE2NTIwNDE4Njh9.aLba_0BLE2kzQ_Nnh9FW8Pr-RdDpGpQjIpRd1NMVpfw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/user/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"home"
+					]
+				},
+				"description": "This endpoint is responsible for responding with the username of the logged in user"
+			},
+			"response": []
+		}
+	]
+}
